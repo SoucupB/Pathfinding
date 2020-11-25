@@ -1,0 +1,17 @@
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="test.js"></script>
+    </head>
+    <h1>WASM TEST</h1>
+    <p id = 'par'></p>
+    <script>
+      Module['onRuntimeInitialized'] = function() {
+        console.log("wasm loaded ");
+        console.log(Module._square(100));
+        console.log(Module._add(100, 15));
+        document.getElementById('par').innerHTML = "Square test " + Module._square(100);
+      }
+    </script>
+</html>
